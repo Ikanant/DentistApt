@@ -5,10 +5,12 @@ app.use(express.static('./public'));
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
+var port = Number(process.env.PORT || 3000);
+
 app.get('/', function(req, res){
-    res.render('index'); 
+    res.render('index');
 });
 
-app.listen(3000, function(){
+app.listen(port, function(){
     console.log('Listening on port 3000');
 });
